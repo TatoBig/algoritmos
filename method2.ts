@@ -1,6 +1,6 @@
 const metodo2 = (cantidad: number, semilla: number, semilla2: number) => {
-    console.log('Semilla 1 ', semilla)
-    console.log('Semilla 2 ', semilla2)
+  console.log("Semilla 1 ", semilla);
+  console.log("Semilla 2 ", semilla2);
 
   if (semilla.toString().length !== semilla2.toString().length) {
     throw new Error("Las semillas no tienen la misma cantidad de dígitos");

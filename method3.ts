@@ -1,7 +1,6 @@
-const metodo1 = (cantidad: number, semilla: number) => {
-  if (semilla.toString().length % 2 !== 0) {
-    throw new Error("No se permite una semilla con dígitos impares");
-  }
+const metodo3 = (cantidad: number, semilla: number, constante: number) => {
+  console.log("Semilla ", semilla);
+  console.log("Constante ", constante);
   const numerosGenerados: string[] = [];
 
   const digits = semilla.toString().length;
@@ -9,7 +8,7 @@ const metodo1 = (cantidad: number, semilla: number) => {
   let initial = semilla;
 
   for (let i = 0; i < cantidad; i++) {
-    const step1 = initial ** 2;
+    const step1 = initial * constante;
     const step2 = step1.toString();
     const step3 = step2.length % 2 === 1 ? "0" + step2 : step2;
     console.log(`N${i + 1}: ` + step3);
@@ -22,6 +21,11 @@ const metodo1 = (cantidad: number, semilla: number) => {
   return numerosGenerados;
 };
 
-const numeros = metodo1(5, 3215);
-console.log(numeros);
-
+const numeros3 = metodo3(5, 8521, 9632);
+console.log(numeros3);
+console.log(
+  "Probabilidades: " +
+    numeros3.map((x: string) => {
+      return `0.${x}`;
+    })
+);
